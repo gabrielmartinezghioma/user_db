@@ -26,11 +26,11 @@ const createUser = catchError(async (req, res) => {
     const link = `${frontBaseUrl}/verify_email/${code}`
     await sendEmail({
         to: email,
-        subject: "verify your email",
+        subject: "Check your email",
         html: `
         <h1 style = color:gray> Hello ${firstName} </h1>
-        <p> verify your email</p>
-        <p> go to your email</p>
+        <p> Check your emai</p>
+        <p>Confirm your email by clicking on the following linkl</p>
         <a href='${link}'> ${link} </a>
         <h5>Thanks You</h5>
         `
@@ -121,7 +121,7 @@ const updatePassword = catchError(async (req, res) => {
         to: email,
         subject: "Update password",
         html: `
-        <h1 style = color:red> Hello ${user.firstName} </h1>
+        <h1 style = color:gray> Hello ${user.firstName} </h1>
         <p> Click here to change your password</p>
         <a href='${link}'> ${link} </a>
         <h5>Thanks You</h5>
